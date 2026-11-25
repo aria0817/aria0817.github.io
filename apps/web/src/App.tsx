@@ -1,26 +1,61 @@
-import { useState , useEffect} from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import heroImg from "./assets/hero.png";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "./assets/vite.svg";
+import i18n from "@repo/i18n";
+
+import { useTranslation } from "react-i18next";
+
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const { t, ready } = useTranslation();
 
   useEffect(() => {
-    fetch('/api/health')
+    console.log("========== i18n 调试 ==========");
+    console.log("是否初始化:", i18n.isInitialized);
+    console.log("当前语言:", i18n.language);
+    console.log("解析后的语言:", i18n.resolvedLanguage);
+    console.log("翻译是否准备好:", ready);
+
+    console.log(
+      "中文资源是否存在:",
+      i18n.hasResourceBundle("zh-CN", "translation"),
+    );
+
+    console.log(
+      "中文资源内容:",
+      i18n.getResourceBundle("zh-CN", "translation"),
+    );
+
+    console.log("home.title 翻译结果:", t("home.title"));
+  }, [ready, t]);
+
+  useEffect(() => {
+    fetch("/api/health")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.message)
+        console.log(data.message);
       })
       .catch((error) => {
-        console.error('Error fetching data:', error)
-      })
-  }, [])
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   return (
     <>
       <section id="center">
+        {/* check i18n */}
+        <div className="i18n-status">
+          <p>当前语言：{i18n.language}</p>
+          <p>初始化状态：{String(i18n.isInitialized)}</p>
+          <p>资源准备状态：{String(ready)}</p>
+
+          <h1>{t("home.title")}</h1>
+          <p>{t("home.description")}</p>
+        </div>
+
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
@@ -28,6 +63,10 @@ function App() {
         </div>
         <div>
           <h1>Get started</h1>
+          <h1>
+            {" "}
+            {t("hello")} {t("home.title")}
+          </h1>
           <p>
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
@@ -127,7 +166,7 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

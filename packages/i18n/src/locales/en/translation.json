@@ -1,0 +1,7 @@
+{
+  "hello": "Hello",
+  "home": {
+    "title": "Home",
+    "description": "This is the home page of the example application."
+  }
+}
