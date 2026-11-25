@@ -1,0 +1,53 @@
+:root {
+  /* ========================================
+     Neutral Colors
+  ======================================== */
+
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #faf9f6;
+  --color-neutral-100: #f3f1ed;
+  --color-neutral-200: #e8e5df;
+  --color-neutral-300: #d5d1c9;
+  --color-neutral-400: #aaa59c;
+  --color-neutral-500: #858078;
+  --color-neutral-600: #69645d;
+  --color-neutral-700: #4b4741;
+  --color-neutral-800: #33302c;
+  --color-neutral-900: #242220;
+  --color-neutral-950: #171615;
+
+  /* ========================================
+     Brand Colors
+  ======================================== */
+
+  --color-brand-50: #faf1ed;
+  --color-brand-100: #f3dfd5;
+  --color-brand-200: #e8c3b2;
+  --color-brand-300: #dba18a;
+  --color-brand-400: #cb8266;
+  --color-brand-500: #b66b4d;
+  --color-brand-600: #99553c;
+  --color-brand-700: #79422f;
+  --color-brand-800: #593124;
+  --color-brand-900: #3d221a;
+
+  /* ========================================
+     Semantic Colors
+  ======================================== */
+
+  --color-success-50: #edf7ef;
+  --color-success-500: #388653;
+  --color-success-700: #24643b;
+
+  --color-warning-50: #fff7e8;
+  --color-warning-500: #d89528;
+  --color-warning-700: #936017;
+
+  --color-danger-50: #fdf0ee;
+  --color-danger-500: #cb5148;
+  --color-danger-700: #963a34;
+
+  --color-info-50: #edf4fb;
+  --color-info-500: #4d83b8;
+  --color-info-700: #315e89;
+}

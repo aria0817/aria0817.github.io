@@ -1,0 +1,26 @@
+:root {
+  /* Shadows */
+
+  --shadow-sm:
+    0 1px 2px rgb(36 34 32 / 5%);
+
+  --shadow-md:
+    0 4px 12px rgb(36 34 32 / 6%);
+
+  --shadow-lg:
+    0 12px 32px rgb(36 34 32 / 8%);
+
+  --shadow-xl:
+    0 20px 48px rgb(36 34 32 / 10%);
+
+  /* Transitions */
+
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Focus */
+
+  --focus-ring:
+    0 0 0 3px rgb(182 107 77 / 20%);
+}
